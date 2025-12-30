@@ -1,0 +1,36 @@
+name: Generate Reality Cube
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install jinja2 playwright
+          playwright install chromium
+
+      - name: Generate cube
+        run: python generate_cube.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html reality_cube.png
+          git diff --staged --quiet || git commit -m "Update generated files"
+          git push

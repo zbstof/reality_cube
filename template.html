@@ -86,11 +86,11 @@
         <div class="header"><strong>SUBJECTIVE</strong><span class="hint">(Interior)</span></div>
         <div class="header"><strong>OBJECTIVE</strong><span class="hint">(Exterior)</span></div>
         <div class="header left"><strong>INDIVIDUAL</strong><span class="hint">(The One)</span></div>
-        <div class="cell tl"><h3>{{ wall.quadrants.individual_subjective.title }}</h3><div class="sub">{{ wall.quadrants.individual_subjective.sub }}</div><div class="desc">{{ wall.quadrants.individual_subjective.desc }}</div><div class="meta">{{ wall.quadrants.individual_subjective.meta }}</div></div>
-        <div class="cell tr"><h3>{{ wall.quadrants.individual_objective.title }}</h3><div class="sub">{{ wall.quadrants.individual_objective.sub }}</div><div class="desc">{{ wall.quadrants.individual_objective.desc }}</div><div class="meta">{{ wall.quadrants.individual_objective.meta }}</div></div>
+        <div class="cell tl"><h3>{{ wall.quadrants.individual_subjective.title }}</h3><div class="sub">{{ wall.quadrants.individual_subjective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.individual_subjective.desc }}</div><div class="meta">{{ wall.quadrants.individual_subjective.meta }}</div></div>
+        <div class="cell tr"><h3>{{ wall.quadrants.individual_objective.title }}</h3><div class="sub">{{ wall.quadrants.individual_objective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.individual_objective.desc }}</div><div class="meta">{{ wall.quadrants.individual_objective.meta }}</div></div>
         <div class="header left"><strong>COLLECTIVE</strong><span class="hint">(The Many)</span></div>
-        <div class="cell bl"><h3>{{ wall.quadrants.collective_subjective.title }}</h3><div class="sub">{{ wall.quadrants.collective_subjective.sub }}</div><div class="desc">{{ wall.quadrants.collective_subjective.desc }}</div><div class="meta">{{ wall.quadrants.collective_subjective.meta }}</div></div>
-        <div class="cell br"><h3>{{ wall.quadrants.collective_objective.title }}</h3><div class="sub">{{ wall.quadrants.collective_objective.sub }}</div><div class="desc">{{ wall.quadrants.collective_objective.desc }}</div><div class="meta">{{ wall.quadrants.collective_objective.meta }}</div></div>
+        <div class="cell bl"><h3>{{ wall.quadrants.collective_subjective.title }}</h3><div class="sub">{{ wall.quadrants.collective_subjective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.collective_subjective.desc }}</div><div class="meta">{{ wall.quadrants.collective_subjective.meta }}</div></div>
+        <div class="cell br"><h3>{{ wall.quadrants.collective_objective.title }}</h3><div class="sub">{{ wall.quadrants.collective_objective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.collective_objective.desc }}</div><div class="meta">{{ wall.quadrants.collective_objective.meta }}</div></div>
     </div>
 </div>
 {% endfor %}

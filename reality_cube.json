@@ -35,7 +35,7 @@
     "quadrants": {
       "individual_subjective": {
         "title": "Phenomena",
-        "sub": "(Psyche / Ego / Understanding / Perception)",
+        "sub": "(Psyche / Ego / Understanding / Perception / Experience /\nIntellect [orientation toward the Objective Absolute] / Emotion [orientation toward the Subjective Absolute])",
         "desc": "Evolving personality, emotions, and thoughts. The changing 'self'.",
         "meta": "Metaphor: The Movie"
       },
@@ -47,7 +47,7 @@
       },
       "individual_objective": {
         "title": "The Organism",
-        "sub": "(Soma / Body)",
+        "sub": "(Soma / Physical Body / Brain / Neurotransmitters / Observable Behavior)",
         "desc": "The physical body that ages, metabolizes, and acts in time.",
         "meta": "Metaphor: The Actor"
       },

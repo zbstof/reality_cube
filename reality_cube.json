@@ -1,0 +1,62 @@
+{
+  "absolute_wall": {
+    "title": "THE ABSOLUTE",
+    "subtitle": "(The Timeless Source & Potential)",
+    "quadrants": {
+      "individual_subjective": {
+        "title": "The Witness",
+        "sub": "(Soul / Atman)",
+        "desc": "Pure, unchanging Awareness. The 'I Am' stripped of content.",
+        "meta": "Metaphor: The Projector Light"
+      },
+      "collective_subjective": {
+        "title": "The Godhead",
+        "sub": "(Brahman)",
+        "desc": "The singular, indivisible consciousness shared by all.",
+        "meta": "Metaphor: The Sun"
+      },
+      "individual_objective": {
+        "title": "Thing-in-itself",
+        "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net)",
+        "desc": "The unique, timeless 'seed pattern' or true nature of an entity.",
+        "meta": "Metaphor: The Acorn"
+      },
+      "collective_objective": {
+        "title": "Ground of Being",
+        "sub": "(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm / Indra's Net)",
+        "desc": "The timeless Laws of Physics and infinite potential energy.",
+        "meta": "Metaphor: The Ocean"
+      }
+    }
+  },
+  "relative_wall": {
+    "title": "THE RELATIVE",
+    "subtitle": "(The Evolving Process & Manifestation)",
+    "quadrants": {
+      "individual_subjective": {
+        "title": "Phenomena",
+        "sub": "(Psyche / Ego / Understanding / Perception)",
+        "desc": "Evolving personality, emotions, and thoughts. The changing 'self'.",
+        "meta": "Metaphor: The Movie"
+      },
+      "collective_subjective": {
+        "title": "Culture",
+        "sub": "(Describing the Interior: Worldviews / Shared Values / Languages / Myths\n Describing the Exterior: Science / Philosophy / Physics / Math)",
+        "desc": "Shared meaning, ethics, language, and myths that evolve through history.",
+        "meta": "Metaphor: The Film Genre"
+      },
+      "individual_objective": {
+        "title": "The Organism",
+        "sub": "(Soma / Body)",
+        "desc": "The physical body that ages, metabolizes, and acts in time.",
+        "meta": "Metaphor: The Actor"
+      },
+      "collective_objective": {
+        "title": "The System",
+        "sub": "(Society / Economy)",
+        "desc": "Visible structures: cities, internet, markets, ecosystems.",
+        "meta": "Metaphor: The Stage Set"
+      }
+    }
+  }
+}

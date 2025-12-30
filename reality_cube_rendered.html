@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: white;
+            width: 720px;
+        }
+        .wall { background: white; }
+        .wall-title { text-align: center; margin: 16px; }
+        .wall-title h2 { font-size: 16px; font-weight: bold; letter-spacing: 1px; }
+        .wall-title .subtitle { font-size: 12px; color: #666; margin-top: 2px; }
+        .grid {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr;
+            grid-template-rows: 40px 130px 130px;
+        }
+        .header {
+            background: #E8E8E8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            text-align: center;
+        }
+        .header.left { writing-mode: vertical-rl; transform: rotate(180deg); }
+        .header strong { font-size: 11px; }
+        .header .hint { font-size: 8px; color: #666; }
+        .corner { background: #E8E8E8; }
+        .cell { background: #FAFAFA; padding: 10px 12px; text-align: center; }
+        .cell.tl { border-right: 1px solid #999; border-bottom: 1px solid #999; }
+        .cell.tr { border-bottom: 1px solid #999; }
+        .cell.bl { border-right: 1px solid #999; }
+        .cell h3 { font-size: 13px; margin-bottom: 2px; }
+        .cell .sub { font-size: 9px; color: #666; margin-bottom: 6px; }
+        .cell .desc { font-size: 9px; line-height: 1.3; margin-bottom: 4px; }
+        .cell .meta { font-size: 8px; color: #888; font-style: italic; }
+        .page-header { position: relative; padding: 16px 0 8px; }
+        .page-title { text-align: center; font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+        .watermark {
+            position: absolute;
+            top: 8px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            opacity: 0.5;
+        }
+        .watermark-text {
+            font-size: 9px;
+            color: #5C3D2E;
+            margin-right: 6px;
+            text-align: right;
+            line-height: 1.3;
+        }
+        .watermark-img { height: 40px; }
+        .version { font-size: 8px; color: #999; }
+        .footer { text-align: right; font-size: 9px; color: #999; font-style: italic; padding: 8px 0; }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="watermark">
+        <div class="watermark-text">t.me/awakening_espresso<br><span class="version">v0.1.0</span></div>
+        <img class="watermark-img" src="espresso round.png" alt="">
+    </div>
+    <div class="page-title">REALITY CUBE</div>
+</div>
+
+
+<div class="wall">
+    <div class="wall-title">
+        <h2>THE ABSOLUTE</h2>
+        <div class="subtitle">(The Timeless Source & Potential)</div>
+    </div>
+    <div class="grid">
+        <div class="corner"></div>
+        <div class="header"><strong>SUBJECTIVE</strong><span class="hint">(Interior)</span></div>
+        <div class="header"><strong>OBJECTIVE</strong><span class="hint">(Exterior)</span></div>
+        <div class="header left"><strong>INDIVIDUAL</strong><span class="hint">(The One)</span></div>
+        <div class="cell tl"><h3>The Witness</h3><div class="sub">(Soul / Atman)</div><div class="desc">Pure, unchanging Awareness. The 'I Am' stripped of content.</div><div class="meta">Metaphor: The Projector Light</div></div>
+        <div class="cell tr"><h3>Thing-in-itself</h3><div class="sub">(Te (De, 德) / The Monad / Dharma / Haecceity)</div><div class="desc">The unique, timeless 'seed pattern' or true nature of an entity.</div><div class="meta">Metaphor: The Acorn</div></div>
+        <div class="header left"><strong>COLLECTIVE</strong><span class="hint">(The Many)</span></div>
+        <div class="cell bl"><h3>The Godhead</h3><div class="sub">(Brahman)</div><div class="desc">The singular, indivisible consciousness shared by all.</div><div class="meta">Metaphor: The Sun</div></div>
+        <div class="cell br"><h3>Ground of Being</h3><div class="sub">(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm)</div><div class="desc">The timeless Laws of Physics and infinite potential energy.</div><div class="meta">Metaphor: The Ocean</div></div>
+    </div>
+</div>
+
+<div class="wall">
+    <div class="wall-title">
+        <h2>THE RELATIVE</h2>
+        <div class="subtitle">(The Evolving Process & Manifestation)</div>
+    </div>
+    <div class="grid">
+        <div class="corner"></div>
+        <div class="header"><strong>SUBJECTIVE</strong><span class="hint">(Interior)</span></div>
+        <div class="header"><strong>OBJECTIVE</strong><span class="hint">(Exterior)</span></div>
+        <div class="header left"><strong>INDIVIDUAL</strong><span class="hint">(The One)</span></div>
+        <div class="cell tl"><h3>Phenomena</h3><div class="sub">(Psyche / Ego / Understanding / Perception)</div><div class="desc">Evolving personality, emotions, and thoughts. The changing 'self'.</div><div class="meta">Metaphor: The Movie</div></div>
+        <div class="cell tr"><h3>The Organism</h3><div class="sub">(Soma / Body)</div><div class="desc">The physical body that ages, metabolizes, and acts in time.</div><div class="meta">Metaphor: The Actor</div></div>
+        <div class="header left"><strong>COLLECTIVE</strong><span class="hint">(The Many)</span></div>
+        <div class="cell bl"><h3>Culture</h3><div class="sub">(Describing the Interior: Worldviews / Shared Values / Languages / Myths
+ Describing the Exterior: Science / Philosophy / Physics / Math)</div><div class="desc">Shared meaning, ethics, language, and myths that evolve through history.</div><div class="meta">Metaphor: The Film Genre</div></div>
+        <div class="cell br"><h3>The System</h3><div class="sub">(Society / Economy)</div><div class="desc">Visible structures: cities, internet, markets, ecosystems.</div><div class="meta">Metaphor: The Stage Set</div></div>
+    </div>
+</div>
+
+
+<div class="footer">This is a Map, not a Territory</div>
+
+</body>
+</html>

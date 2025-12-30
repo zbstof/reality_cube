@@ -12,7 +12,7 @@ def main():
         template = Template(f.read())
 
     html = template.render(data=data, version=__VERSION__)
-    html_path = os.path.abspath('reality_cube_rendered.html')
+    html_path = os.path.abspath('index.html')
     png_path = os.path.abspath('reality_cube.png')
 
     with open(html_path, 'w') as f:

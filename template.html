@@ -21,6 +21,24 @@
             display: grid;
             grid-template-columns: auto 1fr 1fr;
             grid-template-rows: 40px 130px 130px;
+            position: relative;
+        }
+        .grid-heart {
+            position: absolute;
+            top: calc(40px + 130px);
+            left: calc(50% + 17px);
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #D94A4A;
+            z-index: 10;
+            background: white;
+            border: 2px solid #D94A4A;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .header {
             background: #E8E8E8;
@@ -35,10 +53,43 @@
         .header strong { font-size: 11px; }
         .header .hint { font-size: 8px; color: #666; }
         .corner { background: #E8E8E8; }
-        .cell { background: #FAFAFA; padding: 10px 12px; text-align: center; }
-        .cell.tl { border-right: 1px solid #999; border-bottom: 1px solid #999; }
-        .cell.tr { border-bottom: 1px solid #999; }
-        .cell.bl { border-right: 1px solid #999; }
+        .cell { padding: 10px 12px; text-align: center; }
+        /* 4 edge colors for face-diagonal connections within each wall */
+        /* 4 background colors for space-diagonal Z-twist connections between walls */
+        .cell.tl { 
+            border-right: 1px solid #999; 
+            border-bottom: 1px solid #999;
+            border-top: 3px solid #D94A4A;
+            border-left: 3px solid #4AD94A;
+        }
+        .cell.br { 
+            border-left: 1px solid #999;
+            border-top: 1px solid #999;
+            border-bottom: 3px solid #D94A4A;
+            border-right: 3px solid #4AD94A;
+        }
+        .cell.tr { 
+            border-left: 1px solid #999;
+            border-bottom: 1px solid #999;
+            border-top: 3px solid #4A90D9;
+            border-right: 3px solid #D9A04A;
+        }
+        .cell.bl { 
+            border-right: 1px solid #999;
+            border-top: 1px solid #999;
+            border-bottom: 3px solid #4A90D9;
+            border-left: 3px solid #D9A04A;
+        }
+        /* Wall 1 (Absolute/Back) - Z-twist backgrounds (WE on top, I on bottom) */
+        .wall-1 .cell.tl { background: #FCE7F3; }  /* Crimson - Christic: Godhead<-Organism */
+        .wall-1 .cell.tr { background: #F3E8FF; }  /* Purple - Gnostic: Ground<-Phenomena */
+        .wall-1 .cell.bl { background: #FEF3C7; }  /* Gold - Steward: Witness->System */
+        .wall-1 .cell.br { background: #CFFAFE; }  /* Teal - Artist: Monad->Culture */
+        /* Wall 2 (Relative/Front) - Z-twist backgrounds (WE on top, I on bottom) */
+        .wall-2 .cell.tl { background: #CFFAFE; }  /* Teal - Artist: Culture<-Monad */
+        .wall-2 .cell.tr { background: #FEF3C7; }  /* Gold - Steward: System<-Witness */
+        .wall-2 .cell.bl { background: #F3E8FF; }  /* Purple - Gnostic: Phenomena->Ground */
+        .wall-2 .cell.br { background: #FCE7F3; }  /* Crimson - Christic: Organism->Godhead */
         .cell h3 { font-size: 13px; margin-bottom: 2px; }
         .cell .sub { font-size: 9px; color: #666; margin-bottom: 6px; }
         .cell .desc { font-size: 9px; line-height: 1.3; margin-bottom: 4px; }
@@ -64,39 +115,61 @@
         .watermark-img { height: 40px; }
         .version { font-size: 8px; color: #999; }
         .footer { text-align: right; font-size: 9px; color: #999; font-style: italic; padding: 8px 0; }
+        .legend { display: flex; justify-content: center; gap: 16px; padding: 8px 0; font-size: 8px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 4px; }
+        .legend-swatch { width: 12px; height: 12px; border-radius: 2px; }
+        .summary { text-align: center; font-size: 8px; color: #666; padding: 8px 0; line-height: 1.4; }
+        .summary strong { color: #333; }
     </style>
 </head>
 <body>
 
 <div class="page-header">
     <div class="watermark">
-        <div class="watermark-text"><a href="https://t.me/awakening_espresso">t.me/awakening_espresso</a><br><span class="version">v{{ version }}</span></div>
+        <div class="watermark-text"><a href="https://t.me/awakening_espresso">t.me/awakening_espresso</a><br><a href="https://twitter.com/zbstof">twitter.com/zbstof</a><br><a href="https://github.com/zbstof/reality_cube">github.com/zbstof/reality_cube</a><br><a href="https://www.patreon.com/reality_cube">patreon.com/reality_cube</a><br><span class="version">v{{ version }}</span></div>
         <img class="watermark-img" src="espresso round.png" alt="">
     </div>
     <div class="page-title">REALITY CUBE</div>
 </div>
 
 {% for wall in [data.absolute_wall, data.relative_wall] %}
-<div class="wall">
+<div class="wall wall-{{ loop.index }}">
     <div class="wall-title">
         <h2>{{ wall.title }}</h2>
         <div class="subtitle">{{ wall.subtitle }}</div>
     </div>
     <div class="grid">
+        <div class="grid-heart">&#x2764;</div>
         <div class="corner"></div>
-        <div class="header"><strong>SUBJECTIVE</strong><span class="hint">(Interior)</span></div>
-        <div class="header"><strong>OBJECTIVE</strong><span class="hint">(Exterior)</span></div>
-        <div class="header left"><strong>INDIVIDUAL</strong><span class="hint">(The One)</span></div>
-        <div class="cell tl"><h3>{{ wall.quadrants.individual_subjective.title }}</h3><div class="sub">{{ wall.quadrants.individual_subjective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.individual_subjective.desc }}</div><div class="meta">{{ wall.quadrants.individual_subjective.meta }}</div></div>
-        <div class="cell tr"><h3>{{ wall.quadrants.individual_objective.title }}</h3><div class="sub">{{ wall.quadrants.individual_objective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.individual_objective.desc }}</div><div class="meta">{{ wall.quadrants.individual_objective.meta }}</div></div>
-        <div class="header left"><strong>COLLECTIVE</strong><span class="hint">(The Many)</span></div>
-        <div class="cell bl"><h3>{{ wall.quadrants.collective_subjective.title }}</h3><div class="sub">{{ wall.quadrants.collective_subjective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.collective_subjective.desc }}</div><div class="meta">{{ wall.quadrants.collective_subjective.meta }}</div></div>
-        <div class="cell br"><h3>{{ wall.quadrants.collective_objective.title }}</h3><div class="sub">{{ wall.quadrants.collective_objective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.collective_objective.desc }}</div><div class="meta">{{ wall.quadrants.collective_objective.meta }}</div></div>
+        <div class="header"><strong>LOVE</strong><span class="hint">(Consciousness, Subjective, Interior)</span></div>
+        <div class="header"><strong>GRAVITY</strong><span class="hint">(Energy, Objective, Exterior)</span></div>
+        <div class="header left"><strong>WE</strong><span class="hint">(Collective, Many)</span></div>
+        <div class="cell tl"><h3>{{ wall.quadrants.collective_subjective.title }}</h3><div class="sub">{{ wall.quadrants.collective_subjective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.collective_subjective.desc }}</div><div class="meta">{{ wall.quadrants.collective_subjective.meta }}</div></div>
+        <div class="cell tr"><h3>{{ wall.quadrants.collective_objective.title }}</h3><div class="sub">{{ wall.quadrants.collective_objective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.collective_objective.desc }}</div><div class="meta">{{ wall.quadrants.collective_objective.meta }}</div></div>
+        <div class="header left"><strong>I</strong><span class="hint">(Individual, One)</span></div>
+        <div class="cell bl"><h3>{{ wall.quadrants.individual_subjective.title }}</h3><div class="sub">{{ wall.quadrants.individual_subjective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.individual_subjective.desc }}</div><div class="meta">{{ wall.quadrants.individual_subjective.meta }}</div></div>
+        <div class="cell br"><h3>{{ wall.quadrants.individual_objective.title }}</h3><div class="sub">{{ wall.quadrants.individual_objective.sub | replace('\n', '<br>') | safe }}</div><div class="desc">{{ wall.quadrants.individual_objective.desc }}</div><div class="meta">{{ wall.quadrants.individual_objective.meta }}</div></div>
     </div>
 </div>
 {% endfor %}
 
-<div class="footer">This is a Map, not a Territory<br>It's all in the connections between the Octants</div>
+<div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background: #F3E8FF;"></div>Purple: Gnostic (Truth)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: #FCE7F3;"></div>Crimson: Christic (Love)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: #FEF3C7;"></div>Gold: Steward (Power)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: #CFFAFE;"></div>Teal: Artist (Beauty)</div>
+</div>
+
+<div class="footer">This is a Map, not a Territory<br>It's all in the connections between the Octants<br><span style="color: #D94A4A;">&#x2764;</span> = Ring Singularity, Non-Dual Awareness, First Witness, The Anchor</div>
+
+<div class="summary">
+<strong>The Hardware:</strong> 8 Nodes + 12 Structural Edges + 12 Face Diagonals + 4 Space Diagonals + 1 Center = <strong>37</strong><br>
+<strong>The OS (4D Axes):</strong> X (Consciousness/Energy) + Y (I/We) + Z (Absolute/Relative) + T (Time) = <strong>4</strong><br>
+<strong>41</strong> = The 4D Consciousness Engine &nbsp;|&nbsp; <strong>42</strong> = The Machine + YOU = Second Witness<br><br>
+"Today a young man on acid realized that all matter is merely energy condensed to a slow vibration,<br>
+that we are all one consciousness experiencing itself subjectively, there is no such thing as death,<br>
+life is only a dream, and we are the imagination of ourselves. Here's Tom with the Weather." —Bill Hicks
+</div>
 
 </body>
 </html>

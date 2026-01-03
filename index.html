@@ -21,6 +21,24 @@
             display: grid;
             grid-template-columns: auto 1fr 1fr;
             grid-template-rows: 40px 130px 130px;
+            position: relative;
+        }
+        .grid-heart {
+            position: absolute;
+            top: calc(40px + 130px);
+            left: calc(50% + 17px);
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #D94A4A;
+            z-index: 10;
+            background: white;
+            border: 2px solid #D94A4A;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .header {
             background: #E8E8E8;
@@ -35,10 +53,43 @@
         .header strong { font-size: 11px; }
         .header .hint { font-size: 8px; color: #666; }
         .corner { background: #E8E8E8; }
-        .cell { background: #FAFAFA; padding: 10px 12px; text-align: center; }
-        .cell.tl { border-right: 1px solid #999; border-bottom: 1px solid #999; }
-        .cell.tr { border-bottom: 1px solid #999; }
-        .cell.bl { border-right: 1px solid #999; }
+        .cell { padding: 10px 12px; text-align: center; }
+        /* 4 edge colors for face-diagonal connections within each wall */
+        /* 4 background colors for space-diagonal Z-twist connections between walls */
+        .cell.tl { 
+            border-right: 1px solid #999; 
+            border-bottom: 1px solid #999;
+            border-top: 3px solid #D94A4A;
+            border-left: 3px solid #4AD94A;
+        }
+        .cell.br { 
+            border-left: 1px solid #999;
+            border-top: 1px solid #999;
+            border-bottom: 3px solid #D94A4A;
+            border-right: 3px solid #4AD94A;
+        }
+        .cell.tr { 
+            border-left: 1px solid #999;
+            border-bottom: 1px solid #999;
+            border-top: 3px solid #4A90D9;
+            border-right: 3px solid #D9A04A;
+        }
+        .cell.bl { 
+            border-right: 1px solid #999;
+            border-top: 1px solid #999;
+            border-bottom: 3px solid #4A90D9;
+            border-left: 3px solid #D9A04A;
+        }
+        /* Wall 1 (Absolute/Back) - Z-twist backgrounds (WE on top, I on bottom) */
+        .wall-1 .cell.tl { background: #FCE7F3; }  /* Crimson - Christic: Godhead<-Organism */
+        .wall-1 .cell.tr { background: #F3E8FF; }  /* Purple - Gnostic: Ground<-Phenomena */
+        .wall-1 .cell.bl { background: #FEF3C7; }  /* Gold - Steward: Witness->System */
+        .wall-1 .cell.br { background: #CFFAFE; }  /* Teal - Artist: Monad->Culture */
+        /* Wall 2 (Relative/Front) - Z-twist backgrounds (WE on top, I on bottom) */
+        .wall-2 .cell.tl { background: #CFFAFE; }  /* Teal - Artist: Culture<-Monad */
+        .wall-2 .cell.tr { background: #FEF3C7; }  /* Gold - Steward: System<-Witness */
+        .wall-2 .cell.bl { background: #F3E8FF; }  /* Purple - Gnostic: Phenomena->Ground */
+        .wall-2 .cell.br { background: #FCE7F3; }  /* Crimson - Christic: Organism->Godhead */
         .cell h3 { font-size: 13px; margin-bottom: 2px; }
         .cell .sub { font-size: 9px; color: #666; margin-bottom: 6px; }
         .cell .desc { font-size: 9px; line-height: 1.3; margin-bottom: 4px; }
@@ -64,57 +115,80 @@
         .watermark-img { height: 40px; }
         .version { font-size: 8px; color: #999; }
         .footer { text-align: right; font-size: 9px; color: #999; font-style: italic; padding: 8px 0; }
+        .legend { display: flex; justify-content: center; gap: 16px; padding: 8px 0; font-size: 8px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 4px; }
+        .legend-swatch { width: 12px; height: 12px; border-radius: 2px; }
+        .summary { text-align: center; font-size: 8px; color: #666; padding: 8px 0; line-height: 1.4; }
+        .summary strong { color: #333; }
     </style>
 </head>
 <body>
 
 <div class="page-header">
     <div class="watermark">
-        <div class="watermark-text"><a href="https://t.me/awakening_espresso">t.me/awakening_espresso</a><br><span class="version">v0.1.0</span></div>
+        <div class="watermark-text"><a href="https://t.me/awakening_espresso">t.me/awakening_espresso</a><br><a href="https://twitter.com/zbstof">twitter.com/zbstof</a><br><a href="https://github.com/zbstof/reality_cube">github.com/zbstof/reality_cube</a><br><a href="https://www.patreon.com/reality_cube">patreon.com/reality_cube</a><br><span class="version">v2.2.0</span></div>
         <img class="watermark-img" src="espresso round.png" alt="">
     </div>
     <div class="page-title">REALITY CUBE</div>
 </div>
 
 
-<div class="wall">
+<div class="wall wall-1">
     <div class="wall-title">
         <h2>THE ABSOLUTE</h2>
         <div class="subtitle">(The Timeless Source & Potential)</div>
     </div>
     <div class="grid">
+        <div class="grid-heart">&#x2764;</div>
         <div class="corner"></div>
-        <div class="header"><strong>SUBJECTIVE</strong><span class="hint">(Interior)</span></div>
-        <div class="header"><strong>OBJECTIVE</strong><span class="hint">(Exterior)</span></div>
-        <div class="header left"><strong>INDIVIDUAL</strong><span class="hint">(The One)</span></div>
-        <div class="cell tl"><h3>The Witness</h3><div class="sub">(Soul / Atman)</div><div class="desc">Pure, unchanging Awareness. The 'I Am' stripped of content.</div><div class="meta">Metaphor: The Projector Light</div></div>
-        <div class="cell tr"><h3>Thing-in-itself</h3><div class="sub">(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net)</div><div class="desc">The unique, timeless 'seed pattern' or true nature of an entity.</div><div class="meta">Metaphor: The Acorn</div></div>
-        <div class="header left"><strong>COLLECTIVE</strong><span class="hint">(The Many)</span></div>
-        <div class="cell bl"><h3>The Godhead</h3><div class="sub">(Brahman)</div><div class="desc">The singular, indivisible consciousness shared by all.</div><div class="meta">Metaphor: The Sun</div></div>
-        <div class="cell br"><h3>Ground of Being</h3><div class="sub">(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm / Indra's Net)</div><div class="desc">The timeless Laws of Physics and infinite potential energy.</div><div class="meta">Metaphor: The Ocean</div></div>
+        <div class="header"><strong>LOVE</strong><span class="hint">(Consciousness, Subjective, Interior)</span></div>
+        <div class="header"><strong>GRAVITY</strong><span class="hint">(Energy, Objective, Exterior)</span></div>
+        <div class="header left"><strong>WE</strong><span class="hint">(Collective, Many)</span></div>
+        <div class="cell tl"><h3>The Godhead</h3><div class="sub">(Brahman)</div><div class="desc">The singular, indivisible consciousness shared by all.</div><div class="meta">Metaphor: The Electricity</div></div>
+        <div class="cell tr"><h3>Ground of Being</h3><div class="sub">(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm / Indra's Net)</div><div class="desc">The timeless Laws of Physics and infinite potential energy.</div><div class="meta">Metaphor: The Projector Mechanism</div></div>
+        <div class="header left"><strong>I</strong><span class="hint">(Individual, One)</span></div>
+        <div class="cell bl"><h3>The Witness</h3><div class="sub">(Soul / Atman)</div><div class="desc">Pure, unchanging Awareness. The 'I Am' stripped of content.</div><div class="meta">Metaphor: The Projector Light</div></div>
+        <div class="cell br"><h3>Thing-in-itself</h3><div class="sub">(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net / Tathāgatagarbha (Buddha-nature))</div><div class="desc">The unique, timeless 'seed pattern' or true nature of an entity.</div><div class="meta">Metaphor: The Film Strip (The Master Copy)</div></div>
     </div>
 </div>
 
-<div class="wall">
+<div class="wall wall-2">
     <div class="wall-title">
         <h2>THE RELATIVE</h2>
         <div class="subtitle">(The Evolving Process & Manifestation)</div>
     </div>
     <div class="grid">
+        <div class="grid-heart">&#x2764;</div>
         <div class="corner"></div>
-        <div class="header"><strong>SUBJECTIVE</strong><span class="hint">(Interior)</span></div>
-        <div class="header"><strong>OBJECTIVE</strong><span class="hint">(Exterior)</span></div>
-        <div class="header left"><strong>INDIVIDUAL</strong><span class="hint">(The One)</span></div>
-        <div class="cell tl"><h3>Phenomena</h3><div class="sub">(Psyche / Ego / Understanding / Perception / Experience /<br>Intellect [orientation toward the Objective Absolute] / Emotion [orientation toward the Subjective Absolute])</div><div class="desc">Evolving personality, emotions, and thoughts. The changing 'self'.</div><div class="meta">Metaphor: The Movie</div></div>
-        <div class="cell tr"><h3>The Organism</h3><div class="sub">(Soma / Physical Body / Brain / Neurotransmitters / Observable Behavior)</div><div class="desc">The physical body that ages, metabolizes, and acts in time.</div><div class="meta">Metaphor: The Actor</div></div>
-        <div class="header left"><strong>COLLECTIVE</strong><span class="hint">(The Many)</span></div>
-        <div class="cell bl"><h3>Culture</h3><div class="sub">(Describing the Interior: Worldviews / Shared Values / Languages / Myths<br> Describing the Exterior: Science / Philosophy / Physics / Math)</div><div class="desc">Shared meaning, ethics, language, and myths that evolve through history.</div><div class="meta">Metaphor: The Film Genre</div></div>
-        <div class="cell br"><h3>The System</h3><div class="sub">(Society / Economy)</div><div class="desc">Visible structures: cities, internet, markets, ecosystems.</div><div class="meta">Metaphor: The Stage Set</div></div>
+        <div class="header"><strong>LOVE</strong><span class="hint">(Consciousness, Subjective, Interior)</span></div>
+        <div class="header"><strong>GRAVITY</strong><span class="hint">(Energy, Objective, Exterior)</span></div>
+        <div class="header left"><strong>WE</strong><span class="hint">(Collective, Many)</span></div>
+        <div class="cell tl"><h3>Culture</h3><div class="sub">(Describing the Interior: Worldviews / Shared Values / Languages / Myths<br> Describing the Exterior: Science / Philosophy / Physics / Math)</div><div class="desc">Shared meaning, ethics, language, and myths that evolve through history.</div><div class="meta">Metaphor: The Genre</div></div>
+        <div class="cell tr"><h3>The System</h3><div class="sub">(Society / Economy)</div><div class="desc">Visible structures: cities, internet, markets, ecosystems.</div><div class="meta">Metaphor: The Set Design</div></div>
+        <div class="header left"><strong>I</strong><span class="hint">(Individual, One)</span></div>
+        <div class="cell bl"><h3>Phenomena</h3><div class="sub">(Psyche / Ego / Understanding / Perception / Experience /<br>Intellect [orientation toward the Objective Absolute] / Emotion [orientation toward the Subjective Absolute])</div><div class="desc">Evolving personality, emotions, and thoughts. The changing 'self'.</div><div class="meta">Metaphor: The Movie Experience</div></div>
+        <div class="cell br"><h3>The Organism</h3><div class="sub">(Soma / Physical Body / Brain / Neurotransmitters / Observable Behavior)</div><div class="desc">The physical body that ages, metabolizes, and acts in time.</div><div class="meta">Metaphor: The Character on Screen</div></div>
     </div>
 </div>
 
 
-<div class="footer">This is a Map, not a Territory<br>It's all in the connections between the Octants</div>
+<div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background: #F3E8FF;"></div>Purple: Gnostic (Truth)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: #FCE7F3;"></div>Crimson: Christic (Love)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: #FEF3C7;"></div>Gold: Steward (Power)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: #CFFAFE;"></div>Teal: Artist (Beauty)</div>
+</div>
+
+<div class="footer">This is a Map, not a Territory<br>It's all in the connections between the Octants<br><span style="color: #D94A4A;">&#x2764;</span> = Ring Singularity, Non-Dual Awareness, First Witness, The Anchor</div>
+
+<div class="summary">
+<strong>The Hardware:</strong> 8 Nodes + 12 Structural Edges + 12 Face Diagonals + 4 Space Diagonals + 1 Center = <strong>37</strong><br>
+<strong>The OS (4D Axes):</strong> X (Consciousness/Energy) + Y (I/We) + Z (Absolute/Relative) + T (Time) = <strong>4</strong><br>
+<strong>41</strong> = The 4D Consciousness Engine &nbsp;|&nbsp; <strong>42</strong> = The Machine + YOU = Second Witness<br><br>
+"Today a young man on acid realized that all matter is merely energy condensed to a slow vibration,<br>
+that we are all one consciousness experiencing itself subjectively, there is no such thing as death,<br>
+life is only a dream, and we are the imagination of ourselves. Here's Tom with the Weather." —Bill Hicks
+</div>
 
 </body>
 </html>

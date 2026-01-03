@@ -13,19 +13,19 @@
         "title": "The Godhead",
         "sub": "(Brahman)",
         "desc": "The singular, indivisible consciousness shared by all.",
-        "meta": "Metaphor: The Sun"
+        "meta": "Metaphor: The Electricity"
       },
       "individual_objective": {
         "title": "Thing-in-itself",
-        "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net)",
+        "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net / Tathāgatagarbha (Buddha-nature))",
         "desc": "The unique, timeless 'seed pattern' or true nature of an entity.",
-        "meta": "Metaphor: The Acorn"
+        "meta": "Metaphor: The Film Strip (The Master Copy)"
       },
       "collective_objective": {
         "title": "Ground of Being",
         "sub": "(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm / Indra's Net)",
         "desc": "The timeless Laws of Physics and infinite potential energy.",
-        "meta": "Metaphor: The Ocean"
+        "meta": "Metaphor: The Projector Mechanism"
       }
     }
   },
@@ -37,25 +37,25 @@
         "title": "Phenomena",
         "sub": "(Psyche / Ego / Understanding / Perception / Experience /\nIntellect [orientation toward the Objective Absolute] / Emotion [orientation toward the Subjective Absolute])",
         "desc": "Evolving personality, emotions, and thoughts. The changing 'self'.",
-        "meta": "Metaphor: The Movie"
+        "meta": "Metaphor: The Movie Experience"
       },
       "collective_subjective": {
         "title": "Culture",
         "sub": "(Describing the Interior: Worldviews / Shared Values / Languages / Myths\n Describing the Exterior: Science / Philosophy / Physics / Math)",
         "desc": "Shared meaning, ethics, language, and myths that evolve through history.",
-        "meta": "Metaphor: The Film Genre"
+        "meta": "Metaphor: The Genre"
       },
       "individual_objective": {
         "title": "The Organism",
         "sub": "(Soma / Physical Body / Brain / Neurotransmitters / Observable Behavior)",
         "desc": "The physical body that ages, metabolizes, and acts in time.",
-        "meta": "Metaphor: The Actor"
+        "meta": "Metaphor: The Character on Screen"
       },
       "collective_objective": {
         "title": "The System",
         "sub": "(Society / Economy)",
         "desc": "Visible structures: cities, internet, markets, ecosystems.",
-        "meta": "Metaphor: The Stage Set"
+        "meta": "Metaphor: The Set Design"
       }
     }
   }

@@ -1,1 +1,1 @@
-__VERSION__ = "3.0.1 (safety patch)"
+__VERSION__ = "v3.1.0"

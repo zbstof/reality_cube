@@ -10,7 +10,7 @@
   },
   "axes": {
     "x": {
-      "love": {"label": "LOVE", "hint": "(Consciousness, Subjective, Interior, Meaning)"},
+      "love": {"label": "LOVE", "hint": "(Consciousness, Subjective, Interior, Meaning, Values)"},
       "gravity": {"label": "GRAVITY", "hint": "(Energy, Objective, Exterior, Mechanics, Facts)"}
     },
     "y": {
@@ -24,8 +24,8 @@
       "subtitle": "(The Timeless Source & Potential)",
       "quadrants": {
         "individual_subjective": {
-          "title": "The Anchor",
-          "sub": "(The Witness / Soul / Atman / The Ancient One)",
+          "title": "The Witness",
+          "sub": "(The Anchor / Soul / Atman / The Ancient One)",
           "desc": "Pure, unchanging Awareness. The 'I Am' stripped of content.",
           "meta": "*Metaphor: The Projector Light*"
         },
@@ -98,7 +98,7 @@
       "It's all in the connections between the Octants"
     ],
     "heart_symbol": "❤",
-    "heart_meaning": "Ring Singularity, Non-Dual Awareness, First Witness, The Knot, The Portal"
+    "heart_meaning": "Ring Singularity, Non-Dual Awareness, The Knot, The Portal"
   },
   "summary": {
     "hardware": "**The Hardware:** 8 Nodes + 12 Structural Edges + 12 Face Diagonals + 4 Space Diagonals + 1 Center = **37**",

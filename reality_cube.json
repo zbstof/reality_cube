@@ -25,7 +25,7 @@
       "quadrants": {
         "individual_subjective": {
           "title": "The Witness",
-          "sub": "(The Anchor / Soul / Atman / The Ancient One / Nous / Sanchita Karma (The Warehouse))",
+          "sub": "(The Anchor / Soul / Atman / The Ancient One / Nous)",
           "desc": "Pure, unchanging Awareness. The 'I Am' stripped of content.",
           "meta": "*Metaphor: The Projector Light*"
         },
@@ -37,7 +37,7 @@
         },
         "individual_objective": {
           "title": "Thing-in-itself",
-          "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net / Tathāgatagarbha (Buddha-nature) / Original Sin)",
+          "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net / Tathāgatagarbha (Buddha-nature) / Original Sin / Sanchita Karma (The Warehouse))",
           "desc": "The unique, timeless 'seed pattern' or true nature of an entity.",
           "meta": "*Metaphor: The Film Strip (The Master Copy)*"
         },
@@ -61,7 +61,7 @@
         },
         "collective_subjective": {
           "title": "Culture",
-          "sub": "(Describing the Interior: Worldviews / Shared Values / Languages / Myths\n Describing the Exterior: Science / Philosophy / Physics / Math)",
+          "sub": "(Describing the Interior: Worldviews / Shared Values / Languages / Myths\n Describing the Exterior: Scientific Process / Philosophy / Physics / Language of Math)",
           "desc": "Shared meaning, ethics, language, and myths that evolve through history.",
           "meta": "*Metaphor: The Genre*"
         },

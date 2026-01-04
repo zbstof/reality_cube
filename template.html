@@ -41,6 +41,7 @@
             align-items: center;
             justify-content: center;
         }
+        .grid-heart a { color: inherit; text-decoration: none; }
         .header {
             background: white;
             display: flex;
@@ -210,6 +211,15 @@
             max-width: 500px;
         }
         .structural-warning strong { color: #880E4F; }
+        .cell.br { position: relative; }
+        .dead-pixel {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #000;
+            bottom: 8px;
+            right: 12px;
+        }
     </style>
 </head>
 <body>
@@ -240,7 +250,7 @@
         <div class="subtitle">{{ wall.subtitle }}</div>
     </div>
     <div class="grid">
-        <div class="grid-heart">&#x2764;</div>
+        <div class="grid-heart"><a href="http://localhost">&#x2764;</a></div>
         <div class="corner"></div>
         <div class="header">
             <strong>{{ data.axes.x.love.label }}</strong>
@@ -277,6 +287,7 @@
             <div class="meta">{{ wall.quadrants.individual_subjective.meta | safe }}</div>
         </div>
         <div class="cell br">
+            {% if loop.index == 1 %}<span class="dead-pixel"></span>{% endif %}
             <h3>{{ wall.quadrants.individual_objective.title }}</h3>
             <div class="sub">{{ wall.quadrants.individual_objective.sub | safe }}</div>
             <div class="desc">{{ wall.quadrants.individual_objective.desc | safe }}</div>

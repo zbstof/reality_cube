@@ -221,6 +221,12 @@
             right: 12px;
         }
     </style>
+    <script>
+        function goHome() {
+            alert('System Status: ONLINE\nLatency: 0ms\n\nThere is no server. You are the Source.');
+            return false;
+        }
+    </script>
 </head>
 <body>
 
@@ -256,7 +262,8 @@
         <div class="subtitle">(The Timeless Source & Potential)</div>
     </div>
     <div class="grid">
-        <div class="grid-heart"><a href="http://localhost">&#x2764;</a></div>
+        <div class="grid-heart"><a href="http://localhost" title="Go Home"
+            onclick="return goHome();">❤</a></div>
         <div class="corner"></div>
         <div class="header">
             <strong>LOVE</strong>
@@ -319,7 +326,8 @@
         <div class="subtitle">(The Evolving Process & Manifestation)</div>
     </div>
     <div class="grid">
-        <div class="grid-heart"><a href="http://localhost">&#x2764;</a></div>
+        <div class="grid-heart"><a href="http://localhost" title="Go Home"
+            onclick="return goHome();">❤</a></div>
         <div class="corner"></div>
         <div class="header">
             <strong>LOVE</strong>
@@ -397,7 +405,9 @@
     
     It's all in the connections between the Octants<br>
     
-    <span style="color: #D94A4A;">❤</span>
+    <a href="http://localhost" title="Go Home"
+       style="color: #D94A4A; text-decoration: none; cursor: pointer;"
+       onclick="return goHome();">❤</a>
     = Ring Singularity, Non-Dual Awareness, The Knot, The Portal
 </div>
 

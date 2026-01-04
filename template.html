@@ -221,6 +221,12 @@
             right: 12px;
         }
     </style>
+    <script>
+        function goHome() {
+            alert('System Status: ONLINE\nLatency: 0ms\n\nThere is no server. You are the Source.');
+            return false;
+        }
+    </script>
 </head>
 <body>
 
@@ -250,7 +256,8 @@
         <div class="subtitle">{{ wall.subtitle }}</div>
     </div>
     <div class="grid">
-        <div class="grid-heart"><a href="http://localhost">&#x2764;</a></div>
+        <div class="grid-heart"><a href="http://localhost" title="Go Home"
+            onclick="return goHome();">{{ data.footer.heart_symbol }}</a></div>
         <div class="corner"></div>
         <div class="header">
             <strong>{{ data.axes.x.love.label }}</strong>
@@ -321,7 +328,9 @@
     {% for line in data.footer.lines %}
     {{ line }}<br>
     {% endfor %}
-    <span style="color: #D94A4A;">{{ data.footer.heart_symbol }}</span>
+    <a href="http://localhost" title="Go Home"
+       style="color: #D94A4A; text-decoration: none; cursor: pointer;"
+       onclick="return goHome();">{{ data.footer.heart_symbol }}</a>
     = {{ data.footer.heart_meaning }}
 </div>
 

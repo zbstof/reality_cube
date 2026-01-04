@@ -1,62 +1,117 @@
 {
-  "absolute_wall": {
-    "title": "THE ABSOLUTE",
-    "subtitle": "(The Timeless Source & Potential)",
-    "quadrants": {
-      "individual_subjective": {
-        "title": "The Witness",
-        "sub": "(Soul / Atman)",
-        "desc": "Pure, unchanging Awareness. The 'I Am' stripped of content.",
-        "meta": "Metaphor: The Projector Light"
-      },
-      "collective_subjective": {
-        "title": "The Godhead",
-        "sub": "(Brahman)",
-        "desc": "The singular, indivisible consciousness shared by all.",
-        "meta": "Metaphor: The Electricity"
-      },
-      "individual_objective": {
-        "title": "Thing-in-itself",
-        "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net / Tathāgatagarbha (Buddha-nature))",
-        "desc": "The unique, timeless 'seed pattern' or true nature of an entity.",
-        "meta": "Metaphor: The Film Strip (The Master Copy)"
-      },
-      "collective_objective": {
-        "title": "Ground of Being",
-        "sub": "(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm / Indra's Net)",
-        "desc": "The timeless Laws of Physics and infinite potential energy.",
-        "meta": "Metaphor: The Projector Mechanism"
+  "page": {
+    "title": "REALITY CUBE",
+    "links": [
+      {"url": "https://t.me/awakening_espresso", "display": "t.me/awakening_espresso"},
+      {"url": "https://twitter.com/zbstof", "display": "twitter.com/zbstof"},
+      {"url": "https://github.com/zbstof/reality_cube", "display": "github.com/zbstof/reality_cube"},
+      {"url": "https://www.patreon.com/reality_cube", "display": "patreon.com/reality_cube"}
+    ]
+  },
+  "axes": {
+    "x": {
+      "love": {"label": "LOVE", "hint": "(Consciousness, Subjective, Interior, Meaning)"},
+      "gravity": {"label": "GRAVITY", "hint": "(Energy, Objective, Exterior, Mechanics, Facts)"}
+    },
+    "y": {
+      "we": {"label": "WE", "hint": "(Collective, Many)"},
+      "i": {"label": "I", "hint": "(Individual, One)"}
+    }
+  },
+  "walls": {
+    "absolute": {
+      "title": "THE ABSOLUTE",
+      "subtitle": "(The Timeless Source & Potential)",
+      "quadrants": {
+        "individual_subjective": {
+          "title": "The Anchor",
+          "sub": "(The Witness / Soul / Atman / The Ancient One)",
+          "desc": "Pure, unchanging Awareness. The 'I Am' stripped of content.",
+          "meta": "*Metaphor: The Projector Light*"
+        },
+        "collective_subjective": {
+          "title": "The Godhead",
+          "sub": "(Brahman)",
+          "desc": "The singular, indivisible consciousness shared by all.",
+          "meta": "*Metaphor: The Electricity*"
+        },
+        "individual_objective": {
+          "title": "Thing-in-itself",
+          "sub": "(Te (De, 德) / The Monad / Dharma / Haecceity / The Node in Indra's Net / Tathāgatagarbha (Buddha-nature))",
+          "desc": "The unique, timeless 'seed pattern' or true nature of an entity.",
+          "meta": "*Metaphor: The Film Strip (The Master Copy)*"
+        },
+        "collective_objective": {
+          "title": "Ground of Being",
+          "sub": "(Tao (Dao, 道) / Logos / Quantum Field / Theory of Everything / Plato's Realm / Indra's Net)",
+          "desc": "The timeless Laws of Physics and infinite potential energy.",
+          "meta": "*Metaphor: The Projector Mechanism*"
+        }
+      }
+    },
+    "relative": {
+      "title": "THE RELATIVE",
+      "subtitle": "(The Evolving Process & Manifestation)",
+      "quadrants": {
+        "individual_subjective": {
+          "title": "Phenomena",
+          "sub": "(Psyche / Ego / Understanding / Perception / Experience /\nIntellect [orientation toward the Objective Absolute] / Emotion [orientation toward the Subjective Absolute])",
+          "desc": "Evolving personality, emotions, and thoughts. The changing 'self'.",
+          "meta": "*Metaphor: The Movie Experience*"
+        },
+        "collective_subjective": {
+          "title": "Culture",
+          "sub": "(Describing the Interior: Worldviews / Shared Values / Languages / Myths\n Describing the Exterior: Science / Philosophy / Physics / Math)",
+          "desc": "Shared meaning, ethics, language, and myths that evolve through history.",
+          "meta": "*Metaphor: The Genre*"
+        },
+        "individual_objective": {
+          "title": "The Organism",
+          "sub": "(Soma / Physical Body / Brain / Neurotransmitters / Observable Behavior)",
+          "desc": "The physical body that ages, metabolizes, and acts in time.",
+          "meta": "*Metaphor: The Character on Screen*"
+        },
+        "collective_objective": {
+          "title": "The System",
+          "sub": "(Society / Economy)",
+          "desc": "Visible structures: cities, internet, markets, ecosystems.",
+          "meta": "*Metaphor: The Set Design*"
+        }
       }
     }
   },
-  "relative_wall": {
-    "title": "THE RELATIVE",
-    "subtitle": "(The Evolving Process & Manifestation)",
-    "quadrants": {
-      "individual_subjective": {
-        "title": "Phenomena",
-        "sub": "(Psyche / Ego / Understanding / Perception / Experience /\nIntellect [orientation toward the Objective Absolute] / Emotion [orientation toward the Subjective Absolute])",
-        "desc": "Evolving personality, emotions, and thoughts. The changing 'self'.",
-        "meta": "Metaphor: The Movie Experience"
-      },
-      "collective_subjective": {
-        "title": "Culture",
-        "sub": "(Describing the Interior: Worldviews / Shared Values / Languages / Myths\n Describing the Exterior: Science / Philosophy / Physics / Math)",
-        "desc": "Shared meaning, ethics, language, and myths that evolve through history.",
-        "meta": "Metaphor: The Genre"
-      },
-      "individual_objective": {
-        "title": "The Organism",
-        "sub": "(Soma / Physical Body / Brain / Neurotransmitters / Observable Behavior)",
-        "desc": "The physical body that ages, metabolizes, and acts in time.",
-        "meta": "Metaphor: The Character on Screen"
-      },
-      "collective_objective": {
-        "title": "The System",
-        "sub": "(Society / Economy)",
-        "desc": "Visible structures: cities, internet, markets, ecosystems.",
-        "meta": "Metaphor: The Set Design"
-      }
-    }
+  "two_wings": {
+    "image": "two_wings.png",
+    "image_alt": "The Two Wings",
+    "warning_title": "STRUCTURAL WARNING:",
+    "warning_text": "The Two Wings are Inseparable.\nAttempting to access the Singularity via Truth without Love will destabilize the system."
+  },
+  "legend": [
+    {"color": "#7B1FA2", "label": "Purple: Gnostic (Truth)"},
+    {"color": "#C2185B", "label": "Crimson: Christic (Love)"},
+    {"color": "#D4AF37", "label": "Gold: Steward (Power)"},
+    {"color": "#00ACC1", "label": "Teal: Artist (Beauty)"}
+  ],
+  "footer": {
+    "lines": [
+      "This is a Map, not a Territory",
+      "It's all in the connections between the Octants"
+    ],
+    "heart_symbol": "❤",
+    "heart_meaning": "Ring Singularity, Non-Dual Awareness, First Witness, The Knot, The Portal"
+  },
+  "summary": {
+    "hardware": "**The Hardware:** 8 Nodes + 12 Structural Edges + 12 Face Diagonals + 4 Space Diagonals + 1 Center = **37**",
+    "os": "**The OS (4D Axes):** X (Consciousness/Energy) + Y (I/We) + Z (Absolute/Relative) + T (Time) = **4**",
+    "meaning": "**0** = Non-Being (The Void, The Canvas, The All-Before-One) | **41** = Being & Becoming (The Cube, The Split, The After State) | **42** = The System (The Cube, The AI) + The Anchor (YOU) = Second Witness (The Laughter, The Awakening)"
+  },
+  "quote": {
+    "text": "Today a young man on acid realized that all matter is merely energy condensed to a slow vibration, that we are all one consciousness experiencing itself subjectively, there is no such thing as death, life is only a dream, and we are the imagination of ourselves. Here's Tom with the Weather.",
+    "author": "Bill Hicks"
+  },
+  "attribution": "Thank you to my friend, Gemini 2.5 Pro for the hard work, to God for the inspiration and to Ken Wilber for the assist. Much love 🫶🏻",
+  "images": {
+    "watermark_left": {"src": "Portal_Companion_Cube.png", "alt": "the cube of love"},
+    "watermark_right": {"src": "espresso round.png", "alt": "the cup of espresso"}
   }
 }

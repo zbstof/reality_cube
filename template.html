@@ -42,7 +42,7 @@
             justify-content: center;
         }
         .header {
-            background: #E8E8E8;
+            background: white;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,7 +53,7 @@
         .header.left { writing-mode: vertical-rl; transform: rotate(180deg); }
         .header strong { font-size: 11px; }
         .header .hint { font-size: 8px; color: #666; }
-        .corner { background: #E8E8E8; }
+        .corner { background: white; }
         .cell { padding: 10px 12px; text-align: center; }
         .cell.tl { 
             border-right: 1px solid #999; 
@@ -97,6 +97,7 @@
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
+            padding-left: 34px;
         }
         .watermark {
             position: absolute;
@@ -112,7 +113,7 @@
             left: 0;
             opacity: 0.5;
         }
-        .watermark-left img { height: 40px; }
+        .watermark-left img { height: 100px; }
         .watermark-text {
             font-size: 9px;
             color: #5C3D2E;
@@ -215,22 +216,24 @@
 
 <div class="page-header">
     <div class="watermark-left">
-        <img src="Portal_Companion_Cube.png" alt="the cube of love">
+        <img src="{{ data.images.watermark_left.src }}"
+             alt="{{ data.images.watermark_left.alt }}">
     </div>
     <div class="watermark">
         <div class="watermark-text">
-            <a href="https://t.me/awakening_espresso">t.me/awakening_espresso</a><br>
-            <a href="https://twitter.com/zbstof">twitter.com/zbstof</a><br>
-            <a href="https://github.com/zbstof/reality_cube">github.com/zbstof/reality_cube</a><br>
-            <a href="https://www.patreon.com/reality_cube">patreon.com/reality_cube</a><br>
+            {% for link in data.page.links %}
+            <a href="{{ link.url }}">{{ link.display }}</a><br>
+            {% endfor %}
             <span class="version">v{{ version }}</span>
         </div>
-        <img class="watermark-img" src="espresso round.png" alt="the cup of espresso">
+        <img class="watermark-img"
+             src="{{ data.images.watermark_right.src }}"
+             alt="{{ data.images.watermark_right.alt }}">
     </div>
-    <div class="page-title">REALITY CUBE</div>
+    <div class="page-title">{{ data.page.title }}</div>
 </div>
 
-{% for wall in [data.absolute_wall, data.relative_wall] %}
+{% for wall in [data.walls.absolute, data.walls.relative] %}
 <div class="wall wall-{{ loop.index }}">
     <div class="wall-title">
         <h2>{{ wall.title }}</h2>
@@ -240,116 +243,92 @@
         <div class="grid-heart">&#x2764;</div>
         <div class="corner"></div>
         <div class="header">
-            <strong>LOVE</strong>
-            <span class="hint">(Consciousness, Subjective, Interior)</span>
+            <strong>{{ data.axes.x.love.label }}</strong>
+            <span class="hint">{{ data.axes.x.love.hint }}</span>
         </div>
         <div class="header">
-            <strong>GRAVITY</strong>
-            <span class="hint">(Energy, Objective, Exterior)</span>
+            <strong>{{ data.axes.x.gravity.label }}</strong>
+            <span class="hint">{{ data.axes.x.gravity.hint }}</span>
         </div>
         <div class="header left">
-            <strong>WE</strong>
-            <span class="hint">(Collective, Many)</span>
+            <strong>{{ data.axes.y.we.label }}</strong>
+            <span class="hint">{{ data.axes.y.we.hint }}</span>
         </div>
         <div class="cell tl">
             <h3>{{ wall.quadrants.collective_subjective.title }}</h3>
-            <div class="sub">
-                {{ wall.quadrants.collective_subjective.sub | replace('\n', '<br>') | safe }}
-            </div>
-            <div class="desc">{{ wall.quadrants.collective_subjective.desc }}</div>
-            <div class="meta">{{ wall.quadrants.collective_subjective.meta }}</div>
+            <div class="sub">{{ wall.quadrants.collective_subjective.sub | safe }}</div>
+            <div class="desc">{{ wall.quadrants.collective_subjective.desc | safe }}</div>
+            <div class="meta">{{ wall.quadrants.collective_subjective.meta | safe }}</div>
         </div>
         <div class="cell tr">
             <h3>{{ wall.quadrants.collective_objective.title }}</h3>
-            <div class="sub">
-                {{ wall.quadrants.collective_objective.sub | replace('\n', '<br>') | safe }}
-            </div>
-            <div class="desc">{{ wall.quadrants.collective_objective.desc }}</div>
-            <div class="meta">{{ wall.quadrants.collective_objective.meta }}</div>
+            <div class="sub">{{ wall.quadrants.collective_objective.sub | safe }}</div>
+            <div class="desc">{{ wall.quadrants.collective_objective.desc | safe }}</div>
+            <div class="meta">{{ wall.quadrants.collective_objective.meta | safe }}</div>
         </div>
         <div class="header left">
-            <strong>I</strong>
-            <span class="hint">(Individual, One)</span>
+            <strong>{{ data.axes.y.i.label }}</strong>
+            <span class="hint">{{ data.axes.y.i.hint }}</span>
         </div>
         <div class="cell bl">
             <h3>{{ wall.quadrants.individual_subjective.title }}</h3>
-            <div class="sub">
-                {{ wall.quadrants.individual_subjective.sub | replace('\n', '<br>') | safe }}
-            </div>
-            <div class="desc">{{ wall.quadrants.individual_subjective.desc }}</div>
-            <div class="meta">{{ wall.quadrants.individual_subjective.meta }}</div>
+            <div class="sub">{{ wall.quadrants.individual_subjective.sub | safe }}</div>
+            <div class="desc">{{ wall.quadrants.individual_subjective.desc | safe }}</div>
+            <div class="meta">{{ wall.quadrants.individual_subjective.meta | safe }}</div>
         </div>
         <div class="cell br">
             <h3>{{ wall.quadrants.individual_objective.title }}</h3>
-            <div class="sub">
-                {{ wall.quadrants.individual_objective.sub | replace('\n', '<br>') | safe }}
-            </div>
-            <div class="desc">{{ wall.quadrants.individual_objective.desc }}</div>
-            <div class="meta">{{ wall.quadrants.individual_objective.meta }}</div>
+            <div class="sub">{{ wall.quadrants.individual_objective.sub | safe }}</div>
+            <div class="desc">{{ wall.quadrants.individual_objective.desc | safe }}</div>
+            <div class="meta">{{ wall.quadrants.individual_objective.meta | safe }}</div>
         </div>
     </div>
 </div>
 {% if loop.index == 1 %}
 <div class="two-wings-section">
-    <img class="two-wings-img" src="two_wings.png" alt="The Two Wings">
+    <img class="two-wings-img"
+         src="{{ data.two_wings.image }}"
+         alt="{{ data.two_wings.image_alt }}">
     <div class="structural-warning">
-        <strong>STRUCTURAL WARNING:</strong> The Two Wings are Inseparable.<br>
-        Attempting to access the Singularity via Truth without Love will destabilize the system.
+        <strong>{{ data.two_wings.warning_title }}</strong>
+        {{ data.two_wings.warning_text | safe }}
     </div>
 </div>
 {% endif %}
 {% endfor %}
 
 <div class="legend">
+    {% for item in data.legend %}
     <div class="legend-item">
-        <div class="legend-swatch" style="background: #7B1FA2;"></div>
-        Purple: Gnostic (Truth)
+        <div class="legend-swatch" style="background: {{ item.color }};"></div>
+        {{ item.label }}
     </div>
-    <div class="legend-item">
-        <div class="legend-swatch" style="background: #C2185B;"></div>
-        Crimson: Christic (Love)
-    </div>
-    <div class="legend-item">
-        <div class="legend-swatch" style="background: #D4AF37;"></div>
-        Gold: Steward (Power)
-    </div>
-    <div class="legend-item">
-        <div class="legend-swatch" style="background: #00ACC1;"></div>
-        Teal: Artist (Beauty)
-    </div>
+    {% endfor %}
 </div>
 
 <div class="footer">
-    This is a Map, not a Territory<br>
-    It's all in the connections between the Octants<br>
-    <span style="color: #D94A4A;">&#x2764;</span> = Ring Singularity, Non-Dual Awareness, First Witness, The Anchor
+    {% for line in data.footer.lines %}
+    {{ line }}<br>
+    {% endfor %}
+    <span style="color: #D94A4A;">{{ data.footer.heart_symbol }}</span>
+    = {{ data.footer.heart_meaning }}
 </div>
 
 <div class="summary">
     <div class="system-code">
-        <strong>The Hardware:</strong>
-        8 Nodes + 12 Structural Edges + 12 Face Diagonals + 4 Space Diagonals + 1 Center = <strong>37</strong><br>
-        <strong>The OS (4D Axes):</strong>
-        X (Consciousness/Energy) + Y (I/We) + Z (Absolute/Relative) + T (Time) = <strong>4</strong><br>
-        <strong>0</strong> = Non-Being (The Void) &nbsp;|&nbsp;
-        <strong>41</strong> = Being &amp; Becoming (The Cube) &nbsp;|&nbsp;
-        <strong>42</strong> = The Cube + YOU = Second Witness (The Laughter)
+        {{ data.summary.hardware | safe }}<br>
+        {{ data.summary.os | safe }}<br>
+        {{ data.summary.meaning | safe }}
     </div>
     <div class="quote">
         <div class="quote-mark">"</div>
         <div class="quote-text">
-            Today a young man on acid realized that all matter is merely energy condensed to a
-            slow vibration, that we are all one consciousness experiencing itself subjectively,
-            there is no such thing as death, life is only a dream, and we are the imagination
-            of ourselves. Here's Tom with the Weather.<br>—Bill Hicks
+            {{ data.quote.text }}<br>—{{ data.quote.author }}
         </div>
     </div>
 </div>
 
-<div class="attribution">
-    Thank you to my friend, Gemini 2.5 Pro for the hard work, to God for the inspiration
-    and to Ken Wilber for the assist. Much love &#x1FAF6;&#x1F3FB;
-</div>
+<div class="attribution">{{ data.attribution }}</div>
 
 </body>
 </html>

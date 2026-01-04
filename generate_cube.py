@@ -1,12 +1,38 @@
 import json
 import os
+import re
 from jinja2 import Template
 from playwright.sync_api import sync_playwright
 from __init__ import __VERSION__
 
+
+def markdown_to_html(text):
+    """Convert simple markdown to HTML."""
+    if not text:
+        return text
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+    text = text.replace('\n', '<br>')
+    text = text.replace(' | ', ' &nbsp;|&nbsp; ')
+    return text
+
+
+def process_data(obj):
+    """Recursively process all string values in the data structure."""
+    if isinstance(obj, dict):
+        return {k: process_data(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [process_data(item) for item in obj]
+    elif isinstance(obj, str):
+        return markdown_to_html(obj)
+    return obj
+
+
 def main():
     with open('reality_cube.json', 'r') as f:
-        data = json.load(f)
+        raw_data = json.load(f)
+
+    data = process_data(raw_data)
 
     with open('template.html', 'r') as f:
         template = Template(f.read())
@@ -26,6 +52,7 @@ def main():
         browser.close()
 
     print(f"Success! Generated {png_path}")
+
 
 if __name__ == "__main__":
     main()

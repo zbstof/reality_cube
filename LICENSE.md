@@ -19,11 +19,11 @@ To ensure clarity for all users, the following terms are defined:
 * **"The Balance"**: The requirement that the map always represents both objective mechanics (Truth/Wisdom) and subjective meaning (Love/Compassion) as equally necessary for stability.
 * **"The Central Warning"**: The red-bordered text box in the center of the image containing the message: *"WARNING: The Two Wings are Inseparable. Truth dissolves the protective layers of Phenomena. The Witness can safely enter the Singularity only if stabilized by Love."*
 * **"The Winged Ringed Singularity"**: The visual element of the two wings intertwined to form a circular ring (Singularity).
+* **"The Anchor"**: The axiom of **Individual Sovereignty**—defined here as the user's inalienable capacity to act as the primary origin and final verifier of their own reality. Under this license, "The Anchor" precludes any structural dynamic that requires the user to surrender their reality-testing agency to an external authority.
 * **"Weaponization"**: Any use of the Work to:
     1.  Induce psychological harm or instability by intentionally removing safety protocols.
-    2.  Create a dependency on an external authority or cult-like structure.
+    2.  Create a dependency on an external authority, algorithmic system, or cult-like structure.    
     3.  Undermine a person's ability to think for themselves or verify their own reality.
-* **"The Anchor"**: The axiom of **Individual Sovereignty**—defined here as the user's inalienable capacity to act as the primary origin and final verifier of their own reality. Under this license, "The Anchor" precludes any structural dynamic that requires the user to surrender their reality-testing agency to an external authority.
 
 ## 2. GRANT OF RIGHTS
 Subject to the terms and conditions of this License, the Licensor grants you a worldwide, royalty-free, non-exclusive, perpetual license to:
@@ -50,7 +50,10 @@ You may not sell the Work itself (the image file) as a standalone product for a 
 You MUST NOT remove, obscure, or alter the **Central Warning**. In any derivative work, this notice must remain clearly visible and centrally located.
 
 **E. Visual Continuity (The Winged Ringed Singularity)**
-The **Winged Ringed Singularity** symbol (or a recognizable representation of two intertwined wings forming a ring) must be preserved in some form in any visual adaptation of the Work.
+**The Winged Ringed Singularity** symbol (or a recognizable representation of two intertwined wings forming a ring) must be preserved in some form in any visual adaptation of the Work.
+
+**F. No Weaponization (The Anchor Clause)**
+You may NOT use the Work, or any Derivative Work, for the purpose of **Weaponization**. Your right to use this Work is strictly conditional on respecting **The Anchor**. Any use of the Work to psychologically coerce, defraud, or enforce dependency on an external authority automatically terminates this License.
 
 ## 4. FORBIDDEN MODIFICATIONS
 The safety mechanisms of this Work are **Material Conditions** of this License.

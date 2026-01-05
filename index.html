@@ -192,12 +192,39 @@
             align-items: center;
             padding: 16px 0;
             padding-left: 34px;
+            position: relative;
+        }
+        .wings-container {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .wing-label {
+            position: absolute;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            top: -15px;
+            white-space: nowrap;
+        }
+        .wing-label.left {
+            left: 20%;
+            transform: translateX(-50%);
+            color: #C2185B; /* Love Crimson */
+        }
+        .wing-label.right {
+            right: 20%;
+            transform: translateX(50%);
+            color: #7B1FA2; /* Truth Purple */
         }
         .two-wings-img {
             max-height: 150px;
-            max-width: 90%;
+            max-width: 100%;
             height: auto;
             z-index: 10;
+            display: block;
         }
         .structural-warning {
             margin-top: 10px;
@@ -278,6 +305,77 @@
             right: -15px;
             color: #7B1FA2;
         }
+        /* Radiating arrows for Relative wall */
+        .wall-2 .cell.tl { border-right-color: transparent; border-bottom-color: transparent; }
+        .wall-2 .cell.tr { border-left-color: transparent; border-bottom-color: transparent; }
+        .wall-2 .cell.bl { border-right-color: transparent; border-top-color: transparent; }
+        .wall-2 .cell.br { border-left-color: transparent; border-top-color: transparent; }
+        .radiating-arrows {
+            position: absolute;
+            top: calc(40px + 130px);
+            left: calc(50% + 17px);
+            z-index: 5;
+        }
+        .rad-arrow {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .rad-arrow::before, .rad-arrow::after {
+            content: '';
+            background: #999;
+            flex: 1;
+        }
+        .rad-arrow.up::before, .rad-arrow.up::after,
+        .rad-arrow.down::before, .rad-arrow.down::after {
+            width: 1px;
+        }
+        .rad-arrow.left::before, .rad-arrow.left::after,
+        .rad-arrow.right::before, .rad-arrow.right::after {
+            height: 1px;
+        }
+        .rad-arrow.up, .rad-arrow.down {
+            width: 1px;
+            flex-direction: column;
+            height: 126px;
+            left: 0;
+        }
+        .rad-arrow.left, .rad-arrow.right {
+            height: 1px;
+            flex-direction: row;
+            width: 333px;
+            top: 0;
+        }
+        .rad-arrow.up { bottom: 0; }
+        .rad-arrow.down { top: 0; }
+        .rad-arrow.left { right: 0; }
+        .rad-arrow.right { left: 0; }
+
+        .rad-arrow-head {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 4px solid transparent;
+            z-index: 6;
+        }
+        .rad-arrow.up .rad-arrow-head { border-bottom: 8px solid #999; top: -8px; left: -4px; }
+        .rad-arrow.down .rad-arrow-head { border-top: 8px solid #999; bottom: -8px; left: -4px; }
+        .rad-arrow.left .rad-arrow-head { border-right: 8px solid #999; left: -8px; top: -4px; }
+        .rad-arrow.right .rad-arrow-head { border-left: 8px solid #999; right: -8px; top: -4px; }
+
+        .rad-label {
+            font-size: 8px;
+            color: #666;
+            white-space: nowrap;
+            font-weight: bold;
+            padding: 4px;
+            z-index: 7;
+        }
+        .rad-arrow.up .rad-label, .rad-arrow.down .rad-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
     </style>
     <script>
         function goHome() {
@@ -304,7 +402,9 @@
             
             <a href="https://www.patreon.com/reality_cube">patreon.com/reality_cube</a><br>
             
-            <span class="version">v3.4.0</span>
+            <a href="https://github.com/zbstof/reality_cube/blob/main/LICENSE.md">Reality Cube Public License</a><br>
+            
+            <span class="version">v3.5.0</span>
         </div>
         <img class="watermark-img"
              src="espresso round.png"
@@ -323,6 +423,7 @@
     <div class="grid">
         <div class="grid-heart"><a href="http://localhost" title="Go Home"
             onclick="return goHome();">❤</a></div>
+        
         <div class="corner"></div>
         <div class="header">
             <strong>LOVE</strong>
@@ -369,12 +470,16 @@
 </div>
 
 <div class="two-wings-section">
-    <img class="two-wings-img"
-         src="two_wings.png"
-         alt="The Two Wings">
+    <div class="wings-container">
+        <div class="wing-label left">The Wing of Love<br>(Compassion)</div>
+        <div class="wing-label right">The Wing of Truth<br>(Wisdom)</div>
+        <img class="two-wings-img"
+             src="two_wings.png"
+             alt="The Two Wings">
+    </div>
     <div class="structural-warning">
         <strong>STRUCTURAL WARNING:</strong>
-        The Two Wings are Inseparable.<br>Attempting to access the Singularity via Truth without Love will destabilize the system.<br>WARNING: Layer dissolution removes latency. Core volatility will be experienced in real-time.
+        The Two Wings are Inseparable. Truth incinerates the illusions of the Relative. The Witness can only sustain the intensity of the Singularity if stabilized by Love.
     </div>
 </div>
 
@@ -399,6 +504,26 @@
     <div class="grid">
         <div class="grid-heart"><a href="http://localhost" title="Go Home"
             onclick="return goHome();">❤</a></div>
+        
+        <div class="radiating-arrows">
+            <div class="rad-arrow up">
+                <div class="rad-arrow-head"></div>
+                <div class="rad-label">Contribution →</div>
+            </div>
+            <div class="rad-arrow down">
+                <div class="rad-arrow-head"></div>
+                <div class="rad-label">← Imprinting</div>
+            </div>
+            <div class="rad-arrow left">
+                <div class="rad-arrow-head"></div>
+                <div class="rad-label">← Sensation</div>
+            </div>
+            <div class="rad-arrow right">
+                <div class="rad-arrow-head"></div>
+                <div class="rad-label">Embodiment →</div>
+            </div>
+        </div>
+        
         <div class="corner"></div>
         <div class="header">
             <strong>LOVE</strong>

@@ -5,7 +5,8 @@
       {"url": "https://t.me/awakening_espresso", "display": "t.me/awakening_espresso"},
       {"url": "https://twitter.com/zbstof", "display": "twitter.com/zbstof"},
       {"url": "https://github.com/zbstof/reality_cube", "display": "github.com/zbstof/reality_cube"},
-      {"url": "https://www.patreon.com/reality_cube", "display": "patreon.com/reality_cube"}
+      {"url": "https://www.patreon.com/reality_cube", "display": "patreon.com/reality_cube"},
+      {"url": "https://github.com/zbstof/reality_cube/blob/main/LICENSE.md", "display": "Reality Cube Public License"}
     ]
   },
   "axes": {
@@ -84,9 +85,17 @@
     "image": "two_wings.png",
     "image_alt": "The Two Wings",
     "warning_title": "STRUCTURAL WARNING:",
-    "warning_text": "The Two Wings are Inseparable.\nAttempting to access the Singularity via Truth without Love will destabilize the system.\nWARNING: Layer dissolution removes latency. Core volatility will be experienced in real-time.",
+    "warning_text": "The Two Wings are Inseparable. Truth incinerates the illusions of the Relative. The Witness can only sustain the intensity of the Singularity if stabilized by Love.",
+    "wing_label_left": "The Wing of Love\n(Compassion)",
+    "wing_label_right": "The Wing of Truth\n(Wisdom)",
     "evolution_label": "EVOLUTION (Matter into Spirit, Apotheosis)",
     "involution_label": "INVOLUTION (Spirit into Matter, Emanation)"
+  },
+  "relative_flow": {
+    "up": "Contribution →",
+    "down": "← Imprinting",
+    "left": "← Sensation",
+    "right": "Embodiment →"
   },
   "legend": [
     {"color": "#7B1FA2", "label": "Purple: Gnostic (Truth)"},

@@ -10,8 +10,8 @@
   },
   "axes": {
     "x": {
-      "love": {"label": "LOVE", "hint": "(Consciousness, Subjective, Interior, Meaning, Values)"},
-      "gravity": {"label": "GRAVITY", "hint": "(Energy, Objective, Exterior, Mechanics, Facts)"}
+      "love": {"label": "LOVE", "hint": "(Grace, Consciousness, Subjective, Interior, Meaning, Values)"},
+      "gravity": {"label": "TRUTH", "hint": "(Gravity, Energy, Objective, Exterior, Mechanics, Facts)"}
     },
     "y": {
       "we": {"label": "WE", "hint": "(Collective, Many)"},

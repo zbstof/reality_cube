@@ -21,7 +21,7 @@
   "walls": {
     "absolute": {
       "title": "THE ABSOLUTE",
-      "subtitle": "(The Timeless Source & Potential)",
+      "subtitle": "(The Timeless Source / Potential / The Boundary / Information / Source Code)",
       "quadrants": {
         "individual_subjective": {
           "title": "The Witness",
@@ -51,7 +51,7 @@
     },
     "relative": {
       "title": "THE RELATIVE",
-      "subtitle": "(The Evolving Process & Manifestation)",
+      "subtitle": "(The Evolving Process / Manifestation / The Bulk / Spacetime / Hyperbolic Projection)",
       "quadrants": {
         "individual_subjective": {
           "title": "Phenomena",
@@ -84,7 +84,9 @@
     "image": "two_wings.png",
     "image_alt": "The Two Wings",
     "warning_title": "STRUCTURAL WARNING:",
-    "warning_text": "The Two Wings are Inseparable.\nAttempting to access the Singularity via Truth without Love will destabilize the system."
+    "warning_text": "The Two Wings are Inseparable.\nAttempting to access the Singularity via Truth without Love will destabilize the system.\nWARNING: Layer dissolution removes latency. Core volatility will be experienced in real-time.",
+    "evolution_label": "EVOLUTION (Matter into Spirit)",
+    "involution_label": "INVOLUTION (Spirit into Matter)"
   },
   "legend": [
     {"color": "#7B1FA2", "label": "Purple: Gnostic (Truth)"},

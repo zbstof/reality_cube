@@ -220,6 +220,64 @@
             bottom: 8px;
             right: 12px;
         }
+        /* Currents arrows */
+        .currents-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .arrow {
+            position: absolute;
+            width: 1px;
+            z-index: 100;
+        }
+        .arrow-head {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+        .arrow-head.up {
+            border-bottom: 8px solid #C2185B;
+            top: -8px;
+            left: -4px;
+        }
+        .arrow-head.down {
+            border-top: 8px solid #7B1FA2;
+            bottom: -8px;
+            left: -4px;
+        }
+        .arrow-label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 8px;
+            white-space: nowrap;
+            writing-mode: vertical-rl;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .arrow-evolution {
+            background: #C2185B;
+            left: 20px;
+            height: 290px;
+            bottom: -60px;
+        }
+        .arrow-involution {
+            background: #7B1FA2;
+            right: 20px;
+            height: 290px;
+            bottom: -50px;
+        }
+        .arrow-evolution .arrow-label {
+            left: -15px;
+            color: #C2185B;
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .arrow-involution .arrow-label {
+            right: -15px;
+            color: #7B1FA2;
+        }
     </style>
     <script>
         function goHome() {
@@ -252,6 +310,18 @@
 {% for wall in [data.walls.absolute, data.walls.relative] %}
 <div class="wall wall-{{ loop.index }}">
     <div class="wall-title">
+        {% if loop.index == 2 %}
+        <div class="currents-wrapper">
+            <div class="arrow arrow-evolution">
+                <div class="arrow-head up"></div>
+                <div class="arrow-label">{{ data.two_wings.evolution_label }}</div>
+            </div>
+            <div class="arrow arrow-involution">
+                <div class="arrow-head down"></div>
+                <div class="arrow-label">{{ data.two_wings.involution_label }}</div>
+            </div>
+        </div>
+        {% endif %}
         <h2>{{ wall.title }}</h2>
         <div class="subtitle">{{ wall.subtitle }}</div>
     </div>
